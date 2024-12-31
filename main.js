@@ -15,7 +15,7 @@ function createWindow() {
     minHeight: 850,
     icon: path.join(__dirname, "/img/VKP.ico"),
     webPreferences: {
-      preload: path.join(__dirname, "Parser.js"),
+      preload: path.join(__dirname, "/Parser.js"),
       nodeIntegration: true,
     },
   });
@@ -23,6 +23,8 @@ function createWindow() {
   win.setTitle("VKParser");
 
   win.loadFile(path.join(__dirname, 'app', 'index.html'))
+
+  win.webContents.openDevTools();
 
   win.on("close", () => {
     win = null;

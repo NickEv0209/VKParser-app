@@ -28,6 +28,7 @@
   },
   "dependencies": {
     "electron-log": "^5.2.4",
-    "electron-updater": "^6.3.9"
+    "electron-updater": "^6.3.9",
+    "puppeteer": "^23.11.1"
   }
 }
