@@ -30,9 +30,9 @@
       "menuCategory": true,
       "shortcutName": "MyApp",
       "artifactName": "${productName}-Setup-${version}.${ext}",
-      "installerIcon": "assets/icons/installer-icon.ico",
-      "uninstallerIcon": "assets/icons/uninstaller-icon.ico",
-      "installerHeaderIcon": "assets/icons/installer-header-icon.ico"
+      "installerIcon": "./img/VKP.ico",
+      "uninstallerIcon": "./img/VKP.ico",
+      "installerHeaderIcon": "./img/VKP.ico"
     }
   },
   "keywords": [],
