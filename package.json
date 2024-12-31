@@ -1,6 +1,6 @@
 {
   "name": "electron-update-app",
-  "version": "3.0.3",
+  "version": "2.0.1",
   "description": "",
   "main": "main.js",
   "scripts": {
@@ -10,14 +10,18 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "build": {
+    "productName": "VKParse",
     "publish": [
       {
         "provider": "github",
         "owner": "NickEv0209",
-        "repo": "electron-update-app",
+        "repo": "VKParser-app",
         "private": false
       }
-    ]
+    ],
+    "win": {
+      "icon": "./img/VKP.ico"
+    }
   },
   "keywords": [],
   "author": "",
