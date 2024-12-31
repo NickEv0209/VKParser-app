@@ -10,7 +10,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "build": {
-    "productName": "VKParse",
+    "productName": "VKParser",
     "publish": [
       {
         "provider": "github",
@@ -21,6 +21,18 @@
     ],
     "win": {
       "icon": "./img/VKP.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": "always",
+      "createStartMenuShortcut": true,
+      "menuCategory": true,
+      "shortcutName": "MyApp",
+      "artifactName": "${productName}-Setup-${version}.${ext}",
+      "installerIcon": "assets/icons/installer-icon.ico",
+      "uninstallerIcon": "assets/icons/uninstaller-icon.ico",
+      "installerHeaderIcon": "assets/icons/installer-header-icon.ico"
     }
   },
   "keywords": [],
