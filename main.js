@@ -3,7 +3,7 @@ const {autoUpdater} = require('electron-updater')
 const log = require('electron-log')
 const path = require('path')
 
-log.transports.file.resolvePathFn = () => path.join(__dirname, 'logs/main.log')
+log.transports.file.resolvePathFn = () => path.join('C:\Users\FERZ\Desktop\projects\electron-update-app', 'logs/main.log')
 log.log('application version = '+ app.getVersion())
 
 let win;
