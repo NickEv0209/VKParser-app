@@ -1,11 +1,12 @@
 {
   "name": "electron-update-app",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "main.js",
   "scripts": {
     "dev": "electron .",
-    "package": "electron-builder",
+    "pack": "electron-builder",
+    "package": "electron-builder -p always",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "build": {
@@ -13,7 +14,8 @@
       {
         "provider": "github",
         "owner": "NickEv0209",
-        "repo": "electron-update-app"
+        "repo": "electron-update-app",
+        "private": false
       }
     ]
   },
@@ -22,10 +24,10 @@
   "license": "ISC",
   "devDependencies": {
     "electron": "^33.2.1",
-    "electron-builder": "^25.1.8",
-    "electron-updater": "^6.3.9"
+    "electron-builder": "^25.1.8"
   },
   "dependencies": {
-    "electron-log": "^5.2.4"
+    "electron-log": "^5.2.4",
+    "electron-updater": "^6.3.9"
   }
 }

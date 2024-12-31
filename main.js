@@ -4,8 +4,7 @@ const log = require('electron-log')
 const path = require('path')
 
 log.transports.file.resolvePathFn = () => path.join(__dirname, 'logs/main.log')
-log.info('hello, log')
-log.warn('Some problem appears')
+log.log('application version = '+ app.getVersion())
 
 let win;
 function createWindow() {
@@ -17,27 +16,32 @@ function createWindow() {
   win.loadFile(path.join(__dirname, 'index.html'))
 };
 
-app.on('ready', () => {
-  createWindow()
-  autoUpdater.checkForUpdatesAndNotify()
+autoUpdater.on('checking-for-update', () => {
+  log.info('checking-for-update...')
 })
 
-autoUpdater.on('update-available', () => {
+autoUpdater.on('update-available', (info) => {
   log.info('update-available')
 })
 
-autoUpdater.on('checking-for-update', () => {
-  log.info('checking-for-update')
+autoUpdater.on('update-not-available', (info) => {
+  log.info('update-not-available')
 })
 
-autoUpdater.on('download-progress', () => {
-  log.info('download-progress')
+autoUpdater.on('error', (err) => {
+  log.info('error in auto-updater. ' + err)
 })
 
-autoUpdater.on('update-downloaded', () => {
+autoUpdater.on('download-progress', (progressTrack) => {
+  log.info("\n\ndownload-progress")
+  log.info(progressTrack)
+})
+
+autoUpdater.on('update-downloaded', (info) => {
   log.info('update-downloaded')
 })
 
-autoUpdater.on('update-not-available', () => {
-  log.info('update-not-available')
+app.on('ready', () => {
+  createWindow()
+  autoUpdater.checkForUpdatesAndNotify()
 })
