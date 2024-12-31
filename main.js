@@ -24,8 +24,6 @@ function createWindow() {
 
   win.loadFile(path.join(__dirname, 'app', 'index.html'))
 
-  win.webContents.openDevTools();
-
   win.on("close", () => {
     win = null;
   });
