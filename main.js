@@ -3,17 +3,30 @@ const {autoUpdater} = require('electron-updater')
 const log = require('electron-log')
 const path = require('path')
 
-log.transports.file.resolvePathFn = () => path.join('C:\Users\FERZ\Desktop\projects\electron-update-app', 'logs/main.log')
+log.transports.file.resolvePathFn = () => path.join(__dirname, 'logs/main.log')
 log.log('application version = '+ app.getVersion())
 
 let win;
 function createWindow() {
   win = new BrowserWindow({
-    width: 300,
-    height: 400,
+    width: 1400,
+    height: 900,
+    minWidth: 1400,
+    minHeight: 850,
+    icon: path.join(__dirname, "/img/VKP.ico"),
+    webPreferences: {
+      preload: path.join(__dirname, "Parser.js"),
+      nodeIntegration: true,
+    },
   });
+  win.setMenuBarVisibility(false);
+  win.setTitle("VKParser");
 
-  win.loadFile(path.join(__dirname, 'index.html'))
+  win.loadFile(path.join(__dirname, 'app', 'index.html'))
+
+  win.on("close", () => {
+    win = null;
+  });
 };
 
 autoUpdater.on('checking-for-update', () => {
