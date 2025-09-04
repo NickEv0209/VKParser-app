@@ -1,0 +1,72 @@
+:root {
+  --bkg-color: #fff;
+  --main-color: #2f9eef;
+  --main-color-rgb: 47, 158, 239;
+  --header-input-color: #00000020;
+  --placeholder-color: #ffffff70;
+  --desc-color: #979797;
+  --border-color: #ececec;
+  --dark-color: #505050;
+  --wildberries-color: #a73afd;
+  --yandex-market-color: #fce000;
+  --ozon-color: #005bff;
+  --sunlight-color: red;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  user-select: none;
+}
+
+body {
+  overflow: hidden;
+  background-color: var(--bkg-color);
+}
+
+.app {
+  display: grid;
+  grid-template-columns: 230px 1fr;
+  grid-template-rows: 50px 1fr;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.app > Header {
+  grid-column: 1 / -1;
+  grid-row: 1;
+}
+
+.app > Sidebar {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.content {
+  grid-column: 2;
+  grid-row: 2;
+  overflow: hidden;
+}
+
+.fade-enter {
+  opacity: 0;
+  transform: translateX(-1%);
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.fade-exit {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.fade-exit-active {
+  opacity: 0;
+}

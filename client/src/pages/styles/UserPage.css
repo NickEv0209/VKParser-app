@@ -1,0 +1,20 @@
+.user-page {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.user-page__title-block {
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--desc-color);
+  width: 100%;
+  height: 70px;
+  padding: 10px;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.user-page__title-block h1 {
+  font-weight: 300;
+}

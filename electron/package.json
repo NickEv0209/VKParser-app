@@ -1,0 +1,56 @@
+{
+  "name": "VKParser",
+  "version": "2.0.3",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "dev": "electron .",
+    "pack": "electron-builder",
+    "package": "electron-builder -p always",
+    "build": "dotenv -e .env -- electron-builder -p always",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "build": {
+    "productName": "VKParser",
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "NickEv0209",
+        "repo": "VKParser-app",
+        "private": false
+      }
+    ],
+    "win": {
+      "icon": "./img/VKP.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": "always",
+      "createStartMenuShortcut": true,
+      "menuCategory": true,
+      "shortcutName": "VKParser",
+      "artifactName": "${productName}-Setup-${version}.${ext}",
+      "installerIcon": "./img/VKP.ico",
+      "uninstallerIcon": "./img/VKP.ico",
+      "installerHeaderIcon": "./img/VKP.ico"
+    }
+  },
+  "keywords": [],
+  "author": {
+    "name": "NStovolosov",
+    "email": "stovolosovn@gmail.com",
+    "url": "-"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "dotenv-cli": "^10.0.0",
+    "electron": "^33.4.11",
+    "electron-builder": "^25.1.8"
+  },
+  "dependencies": {
+    "electron-log": "^5.2.4",
+    "electron-updater": "^6.3.9",
+    "puppeteer": "^23.11.1"
+  }
+}

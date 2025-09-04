@@ -1,0 +1,15 @@
+.custom-thumb {
+  background-color: var(--desc-color);
+}
+
+.custom-track {
+  background-color: var(--main-color);
+}
+
+.custom-checked .custom-thumb {
+  background-color: var(--main-color);
+}
+
+.custom-checked .custom-track {
+  background-color: var(--desc-color);
+}
