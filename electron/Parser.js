@@ -18,7 +18,6 @@ const SELECTORS = {
   OZON: {
     title: "[data-widget] h1",
     image: '[data-widget="webGallery"] > div > div > div > * ~ div img',
-    // image: "img",
   },
   OZON_ALT: {
     title: '[data-widget="webOutOfStock"] > div > div > div > div > div > p',
@@ -220,10 +219,6 @@ const main = async (settings) => {
 
             const image =
               document.querySelector(SELECTORS.WB.image)?.src ||
-              // document.querySelector(SELECTORS.WB_ALT.image)?.src ||
-              // document.querySelector(SELECTORS.OZON.image)?.src ||
-              // document.querySelector(SELECTORS.OZON_ALT.image)?.src ||
-              // document.querySelector(SELECTORS.YANDEX.image)?.src ||
               [...document.images].find(
                 (img) => img.naturalHeight >= 200 && img.naturalWidth >= 200
               )?.src ||
