@@ -7,12 +7,12 @@ const userName = os.userInfo().username;
 let parseData = [];
 const SELECTORS = {
   WB: {
-    title: "#reactContainers > div > div > div > div > div > div > div > h1",
+    title: "#reactContainers > div > div > div > div > div > div > div > h3",
     image:
       "#reactContainers > div > div > div > div > div > div > div > div > div > div > div img",
   },
   WB_ALT: {
-    title: "h1",
+    title: "h3",
     image: "img[src]",
   },
   OZON: {
@@ -210,13 +210,20 @@ const main = async (settings) => {
 
           const data = await page.evaluate((SELECTORS) => {
             const title =
-              document.querySelector(".mo-modal__paper > div > div > div")
-                ?.textContent ||
-              document.querySelector("h1")?.innerText ||
+              document.querySelector(SELECTORS.WB.title)?.textContent ||
+              document.querySelector(SELECTORS.WB_ALT.title)?.textContent ||
+              document.querySelector(SELECTORS.OZON.title)?.textContent ||
+              document.querySelector(SELECTORS.OZON_ALT.title)?.textContent ||
+              document.querySelector(SELECTORS.YANDEX.title)?.textContent ||
+              document.querySelector("h3")?.innerText ||
               "Товар не найден";
 
             const image =
-              document.querySelector(".mo-modal__paper img")?.src ||
+              document.querySelector(SELECTORS.WB.image)?.src ||
+              // document.querySelector(SELECTORS.WB_ALT.image)?.src ||
+              // document.querySelector(SELECTORS.OZON.image)?.src ||
+              // document.querySelector(SELECTORS.OZON_ALT.image)?.src ||
+              // document.querySelector(SELECTORS.YANDEX.image)?.src ||
               [...document.images].find(
                 (img) => img.naturalHeight >= 200 && img.naturalWidth >= 200
               )?.src ||
