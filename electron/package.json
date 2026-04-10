@@ -21,7 +21,8 @@
       }
     ],
     "win": {
-      "icon": "./img/VKP.ico"
+      "icon": "./img/VKP.ico",
+      "signAndEditExecutable": false
     },
     "nsis": {
       "oneClick": false,

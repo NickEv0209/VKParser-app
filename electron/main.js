@@ -15,7 +15,7 @@ function createWindow() {
     minHeight: 850,
     icon: path.join(__dirname, "/img/VKP.ico"),
     webPreferences: {
-      preload: path.join(__dirname, "/Parser.js"),
+      preload: path.join(__dirname, "api.js"),
       nodeIntegration: true,
     },
   });
